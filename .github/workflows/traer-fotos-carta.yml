@@ -1,0 +1,17 @@
+name: Traer fotos de la carta (Wix)
+on:
+  push:
+    paths: ['cafe/carta/fuentes.txt']
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  traer:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: |
+          cd cafe/carta
+          while read n u; do [ -n "$n" ] && curl -sSfL -o "$n.png" "$u"; done < fuentes.txt
+          git config user.name "kairus-bot"; git config user.email "bot@users.noreply.github.com"
+          git add *.png && git commit -m "Fotos de la carta desde Wix" && git push || echo "sin cambios"
