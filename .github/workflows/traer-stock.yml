@@ -1,0 +1,18 @@
+name: Traer imágenes de stock
+on:
+  push:
+    paths: ['stock/**/fuentes.txt']
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  traer:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: |
+          for f in stock/*/fuentes.txt; do d=$(dirname $f)
+            while read n u; do [ -n "$n" ] && [ ! -f "$d/$n.jpg" ] && curl -sSfL -o "$d/$n.jpg" "$u"; done < $f
+          done
+          git config user.name "kairus-bot"; git config user.email "bot@users.noreply.github.com"
+          git add stock && git commit -m "Imágenes de stock" && git push || echo "sin cambios"
