@@ -20,8 +20,8 @@
   },
   {
    "f": "creici",
-   "x": 560,
-   "h": 520,
+   "x": 450,
+   "h": 540,
    "b": 200,
    "depth": 0.75,
    "fade": 0.3,
@@ -60,7 +60,7 @@
   },
   {
    "f": "botota",
-   "x": 720,
+   "x": 840,
    "h": 720,
    "b": 0,
    "cell": 5
@@ -145,18 +145,18 @@
    "h": "21:00"
   },
   {
+   "dia": "16.12",
+   "sem": "MIÉ",
+   "show": "Ultra",
+   "art": "No Estoy Creici",
+   "h": ""
+  },
+  {
    "dia": "17.12",
    "sem": "JUE",
    "show": "En Terapia Sin Filtro",
    "art": "Botota Fox",
    "h": "20:00"
-  },
-  {
-   "dia": "PRONTO",
-   "sem": "",
-   "show": "Ultra",
-   "art": "No Estoy Creici",
-   "h": ""
   }
  ]
 }
