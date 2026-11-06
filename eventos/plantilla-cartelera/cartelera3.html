@@ -1,0 +1,52 @@
+<!doctype html><html><head><meta charset="utf-8">
+<style>
+@font-face{font-family:LG;src:url(fonts/LeagueGothic%255Bwdth%255D.ttf)}
+@font-face{font-family:DMI;src:url(fonts/DMSerifDisplay-Italic.ttf)}
+@font-face{font-family:AR;src:url(fonts/Archivo%255Bwdth,wght%255D.ttf)}
+:root{--noche:#0e0b10;--lila:#ce78f0;--crema:#f2eadc}
+*{margin:0;padding:0;box-sizing:border-box}
+body{width:1920px;height:1080px;overflow:hidden;background:var(--noche);color:var(--crema);font-family:AR}
+#c{position:relative;width:1920px;height:1080px;overflow:hidden}
+.layer{position:absolute;inset:0}
+/* titulo a dos pasadas */
+.t{position:absolute;left:40px;top:96px;font-family:LG;font-size:330px;line-height:.8;letter-spacing:3px;white-space:nowrap}
+.t.p1{color:var(--lila);transform:translate(9px,7px);opacity:.95}
+.t.p2{color:var(--crema)}
+.kick{position:absolute;left:52px;top:44px;display:flex;align-items:baseline;gap:20px;z-index:5}
+.kick .s{font-family:DMI;font-size:48px;color:var(--lila)}
+.kick .r{font-family:AR;font-weight:700;font-size:15px;letter-spacing:7px;opacity:.7}
+.fogb{position:absolute;left:0;right:0;bottom:0;height:190px;background:linear-gradient(0deg,rgba(14,11,16,1) 25%,rgba(14,11,16,0));z-index:3}
+.col{position:absolute;left:1452px;top:52px;width:432px;z-index:5}
+.logo{height:50px;display:block;margin:0 0 26px 0}
+.hd{font-family:AR;font-weight:700;font-size:13px;letter-spacing:6px;color:var(--lila);padding-bottom:10px;border-bottom:2px solid var(--crema)}
+.row{display:grid;grid-template-columns:24px 1fr auto;column-gap:10px;align-items:baseline;padding:11px 0 10px;border-bottom:1px dashed rgba(242,234,220,.28)}
+.nro{font-family:AR;font-weight:700;font-size:12px;letter-spacing:2px;color:var(--lila)}
+.n{font-family:LG;font-size:35px;white-space:nowrap;line-height:.9;text-transform:uppercase;letter-spacing:.5px}
+.a{grid-column:2/4;font-family:DMI;font-size:18px;color:#d9c4e3;margin-top:1px}
+.dt{font-family:LG;font-size:35px;white-space:nowrap;line-height:.9;color:var(--lila);text-align:right}
+.dt small{font-family:AR;font-weight:700;font-size:11px;letter-spacing:3px;color:var(--crema);opacity:.6;margin-right:6px;vertical-align:4px}
+.foot{position:absolute;left:52px;right:40px;bottom:30px;z-index:6;display:flex;align-items:baseline;gap:34px}
+.foot .k{font-family:DMI;font-size:26px;color:var(--lila)}
+.foot .l{font-family:LG;font-size:42px;letter-spacing:1px;margin-left:10px}
+.foot .h{font-family:AR;font-weight:700;font-size:15px;letter-spacing:3px;opacity:.75;margin-left:8px}
+.foot .r{margin-left:auto;font-family:AR;font-weight:700;font-size:14px;letter-spacing:5px;opacity:.7}
+.grain{position:absolute;inset:0;z-index:9;opacity:.12;mix-blend-mode:overlay;pointer-events:none}
+</style></head><body><div id="c">
+<img class="layer" src="fx/riso_bg.png" style="z-index:0">
+<div class="t p1" style="z-index:1">STAND UP</div><div class="t p2" style="z-index:1">STAND UP</div>
+<img class="layer" src="fx/riso_people.png" style="z-index:2">
+<div class="fogb"></div>
+<div class="kick"><span class="s">en vivo en Kairus</span><span class="r">CARTELERA · 2º PISO</span></div>
+<div class="col"><img class="logo" src="logo.png"><div class="hd">PRÓXIMAS FUNCIONES</div><div id="list"></div></div>
+<div class="foot"><span><span class="k">todos los jueves</span><span class="l">BINGO + KARAOKE</span><span class="h">21:00</span></span>
+<span><span class="k">todos los domingos</span><span class="l">EN FAMILIA</span><span class="h">13:00</span></span><span class="r">LOS ROBLES 3668 · @KAIRUS_CL</span></div>
+<canvas class="grain" id="g" width="1920" height="1080"></canvas>
+</div>
+<script>
+const DATA=__DATA__;
+const L=document.getElementById('list');
+DATA.events.forEach((e,i)=>L.insertAdjacentHTML('beforeend',`<div class="row"><div class="nro">${String(i+1).padStart(2,'0')}</div><div class="n">${e.show}</div><div class="dt">${e.sem?`<small>${e.sem}</small>`:''}${e.dia}</div><div></div><div class="a">${e.art}${e.h?' · '+e.h:''}</div></div>`));
+const g=document.getElementById('g').getContext('2d'),id=g.createImageData(1920,1080);
+for(let i=0;i<id.data.length;i+=4){const v=Math.random()*255;id.data[i]=id.data[i+1]=id.data[i+2]=v;id.data[i+3]=255}
+g.putImageData(id,0,0);
+</script></body></html>

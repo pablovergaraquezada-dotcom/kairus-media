@@ -1,0 +1,162 @@
+{
+ "people": [
+  {
+   "f": "tiro",
+   "x": -30,
+   "h": 640,
+   "b": 170,
+   "depth": 0.72,
+   "fade": 0.25,
+   "cell": 5
+  },
+  {
+   "f": "gaby",
+   "x": 170,
+   "h": 660,
+   "b": 190,
+   "depth": 0.72,
+   "fade": 0.3,
+   "cell": 5
+  },
+  {
+   "f": "creici",
+   "x": 560,
+   "h": 520,
+   "b": 200,
+   "depth": 0.75,
+   "fade": 0.3,
+   "cell": 5
+  },
+  {
+   "f": "mexicano",
+   "x": 1040,
+   "h": 450,
+   "b": 420,
+   "depth": 0.72,
+   "fade": 0.25,
+   "crop": [
+    0,
+    0,
+    520,
+    470
+   ],
+   "cell": 5
+  },
+  {
+   "f": "erwin",
+   "x": 990,
+   "h": 380,
+   "b": 230,
+   "depth": 0.8,
+   "fade": 0.25,
+   "cell": 5
+  },
+  {
+   "f": "wilo",
+   "x": -40,
+   "h": 420,
+   "b": 0,
+   "cell": 5
+  },
+  {
+   "f": "botota",
+   "x": 720,
+   "h": 720,
+   "b": 0,
+   "cell": 5
+  },
+  {
+   "f": "angelo",
+   "x": 930,
+   "h": 390,
+   "b": 0,
+   "fade": 0.2,
+   "crop": [
+    0,
+    0,
+    800,
+    579
+   ],
+   "cell": 5
+  },
+  {
+   "f": "ivan",
+   "x": 270,
+   "h": 540,
+   "b": 0,
+   "crop": [
+    0,
+    0,
+    10000,
+    585
+   ],
+   "fade": 0.15,
+   "cell": 5
+  }
+ ],
+ "events": [
+  {
+   "dia": "13.11",
+   "sem": "VIE",
+   "show": "Consumo Problemático",
+   "art": "Iván Cabello",
+   "h": "21:00"
+  },
+  {
+   "dia": "14.11",
+   "sem": "SÁB",
+   "show": "A Ojos Cerrados",
+   "art": "La Wilo",
+   "h": "20:00"
+  },
+  {
+   "dia": "20.11",
+   "sem": "VIE",
+   "show": "Tirotallas",
+   "art": "Stand up",
+   "h": "21:00"
+  },
+  {
+   "dia": "21.11",
+   "sem": "SÁB",
+   "show": "Por La Chucha",
+   "art": "Erwin Padilla & Claudio Merlin",
+   "h": "20:00"
+  },
+  {
+   "dia": "27.11",
+   "sem": "VIE",
+   "show": "Docente Indecente",
+   "art": "Angelo Soul",
+   "h": "19:30 Y 22:00"
+  },
+  {
+   "dia": "04.12",
+   "sem": "VIE",
+   "show": "Gaby del Río",
+   "art": "Stand up",
+   "h": "21:00"
+  },
+  {
+   "dia": "12.12",
+   "sem": "SÁB",
+   "show": "Se Me Chispoteo",
+   "art": "Ricardo el Mexicano",
+   "h": "21:00"
+  },
+  {
+   "dia": "17.12",
+   "sem": "JUE",
+   "show": "En Terapia Sin Filtro",
+   "art": "Botota Fox",
+   "h": "20:00"
+  },
+  {
+   "dia": "PRONTO",
+   "sem": "",
+   "show": "Ultra",
+   "art": "No Estoy Creici",
+   "h": ""
+  }
+ ]
+}
