@@ -1,0 +1,133 @@
+{
+ "people": [
+  {
+   "f": "mexicano",
+   "x": 1170,
+   "h": 640,
+   "z": 1,
+   "back": 1
+  },
+  {
+   "f": "tiro",
+   "x": -40,
+   "h": 690,
+   "z": 2,
+   "back": 1
+  },
+  {
+   "f": "gaby",
+   "x": 150,
+   "h": 700,
+   "z": 2,
+   "back": 1
+  },
+  {
+   "f": "creici",
+   "x": 560,
+   "h": 540,
+   "z": 2,
+   "back": 1
+  },
+  {
+   "f": "erwin",
+   "x": 960,
+   "h": 400,
+   "z": 2,
+   "back": 1,
+   "b": 110
+  },
+  {
+   "haze": 1,
+   "z": 3
+  },
+  {
+   "f": "wilo",
+   "x": 0,
+   "h": 400,
+   "z": 5
+  },
+  {
+   "f": "botota",
+   "x": 830,
+   "h": 730,
+   "z": 5
+  },
+  {
+   "f": "angelo",
+   "x": 990,
+   "h": 330,
+   "z": 6
+  },
+  {
+   "f": "ivan",
+   "x": 290,
+   "h": 540,
+   "z": 7
+  }
+ ],
+ "events": [
+  {
+   "dia": "13.11",
+   "sem": "VIE",
+   "show": "Consumo Problemático",
+   "art": "Iván Cabello",
+   "h": "21:00"
+  },
+  {
+   "dia": "14.11",
+   "sem": "SÁB",
+   "show": "A Ojos Cerrados",
+   "art": "La Wilo",
+   "h": "20:00"
+  },
+  {
+   "dia": "20.11",
+   "sem": "VIE",
+   "show": "Tirotallas",
+   "art": "stand up comedy",
+   "h": "21:00"
+  },
+  {
+   "dia": "21.11",
+   "sem": "SÁB",
+   "show": "Por La Chucha",
+   "art": "Erwin Padilla & Claudio Merlin",
+   "h": "20:00"
+  },
+  {
+   "dia": "27.11",
+   "sem": "VIE",
+   "show": "Docente Indecente",
+   "art": "Angelo Soul",
+   "h": "19:30 Y 22:00"
+  },
+  {
+   "dia": "04.12",
+   "sem": "VIE",
+   "show": "Gaby del Río",
+   "art": "stand up comedy",
+   "h": "21:00"
+  },
+  {
+   "dia": "12.12",
+   "sem": "SÁB",
+   "show": "Se Me Chispoteo",
+   "art": "Ricardo el Mexicano",
+   "h": "21:00"
+  },
+  {
+   "dia": "17.12",
+   "sem": "JUE",
+   "show": "En Terapia Sin Filtro",
+   "art": "Botota Fox",
+   "h": "20:00"
+  },
+  {
+   "dia": "<span style=\"font-size:34px\">PRONTO</span>",
+   "sem": "",
+   "show": "Ultra",
+   "art": "No Estoy Creici",
+   "h": ""
+  }
+ ]
+}

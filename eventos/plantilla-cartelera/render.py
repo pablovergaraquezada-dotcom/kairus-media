@@ -1,6 +1,6 @@
 import json,sys
 from playwright.sync_api import sync_playwright
-d=open('datos.json').read(); h=open('cartelera.html').read().replace('__DATA__',d)
+d=open(sys.argv[2] if len(sys.argv)>2 else 'datos.json').read(); h=open(sys.argv[3] if len(sys.argv)>3 else 'cartelera.html').read().replace('__DATA__',d)
 open('_r.html','w').write(h)
 out=sys.argv[1] if len(sys.argv)>1 else 'out.png'
 with sync_playwright() as p:
