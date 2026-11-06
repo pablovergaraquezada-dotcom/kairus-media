@@ -41,27 +41,27 @@ def person(k,h,crop=None,fade=0.0,depth=1.0,cell=5):
     lil=dots(L,cell,20,lambda v: 0.95*np.exp(-((v-0.34)/0.2)**2))
     cre=dots(L,cell,45,lambda v: max(0,v-0.55)*1.9)
     col=smooth.copy()
-    lm=(lil/255)[...,None]*0.75; col=col*(1-lm)+np.array(LILA)*lm
+    lm=(lil/255)[...,None]*0.55; col=col*(1-lm)+np.array([96,84,88])*lm
     cm=(cre/255)[...,None]*0.35; col=col*(1-cm)+np.array(CREMA)*cm
-    col=col*depth+np.array([40,24,52])*(1-depth)
+    col=col*depth+np.array([30,26,28])*(1-depth)
     rgba=np.zeros((h,w,4))
     rgba[...,:3]=col; rgba[...,3]=a*255
     body=Image.fromarray(rgba.astype('uint8'),'RGBA')
     # pase lila corrido (silueta desplazada)
-    sil=np.zeros((h,w,4)); sil[...,:3]=LILA; sil[...,3]=ndimage.binary_erosion(a>0.5,iterations=2)*255*(0.8 if depth>0.9 else 0.45)
+    sil=np.zeros((h,w,4)); sil[...,:3]=LILA; sil[...,3]=ndimage.binary_erosion(a>0.5,iterations=2)*255*(0.55 if depth>0.9 else 0.0)
     return body, Image.fromarray(sil.astype('uint8'),'RGBA')
 def spotlight():
     yy,xx=np.mgrid[0:H,0:W]
     g=np.exp(-(((xx-640)/620)**2+((yy-560)/420)**2))*0.75+np.exp(-(((xx-1100)/380)**2+((yy-700)/300)**2))*0.35
     m=dots(np.clip(g,0,1),9,30,lambda v: v**1.1)
-    o=np.zeros((H,W,4)); o[...,:3]=LILA; o[...,3]=m*0.55
+    o=np.zeros((H,W,4)); o[...,:3]=CREMA; o[...,3]=m*0.16
     return Image.fromarray(o.astype('uint8'),'RGBA')
 def paper():
     rng=np.random.default_rng(3)
     n=ndimage.gaussian_filter(rng.random((H,W)),1.2); n2=ndimage.gaussian_filter(rng.random((H//6,W//6)),4)
     n2=np.array(Image.fromarray(((n2-n2.min())/(n2.max()-n2.min())*255).astype('uint8')).resize((W,H),Image.BICUBIC)).astype(float)/255
     v=(n-n.mean())*60+(n2-0.5)*14
-    base=np.array(NOCHE,float)+v[...,None]*np.array([1,0.9,1.1])
+    base=np.array((16,14,15),float)+v[...,None]
     return Image.fromarray(np.clip(base,0,255).astype('uint8')).convert('RGBA')
 if __name__=='__main__':
     D=json.load(open('datos3.json'))
