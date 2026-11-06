@@ -1,0 +1,94 @@
+{
+ "people": [
+  {
+   "f": "mexicano",
+   "x": 905,
+   "h": 610,
+   "z": 1
+  },
+  {
+   "f": "tiro",
+   "x": -10,
+   "h": 700,
+   "z": 2
+  },
+  {
+   "f": "gaby",
+   "x": 215,
+   "h": 730,
+   "z": 2
+  },
+  {
+   "f": "angelo",
+   "x": 780,
+   "h": 470,
+   "z": 3,
+   "b": 330
+  },
+  {
+   "f": "wilo",
+   "x": -80,
+   "h": 440,
+   "z": 5,
+   "front": 1
+  },
+  {
+   "f": "erwin",
+   "x": 690,
+   "h": 420,
+   "z": 6,
+   "front": 1
+  },
+  {
+   "f": "ivan",
+   "x": 320,
+   "h": 530,
+   "z": 7,
+   "front": 1
+  }
+ ],
+ "events": [
+  {
+   "dia": "13 NOV",
+   "sem": "VIE",
+   "show": "Consumo Problemático",
+   "sub": "Iván Cabello · 21:00"
+  },
+  {
+   "dia": "14 NOV",
+   "sem": "SÁB",
+   "show": "A Ojos Cerrados",
+   "sub": "La Wilo · 20:00"
+  },
+  {
+   "dia": "20 NOV",
+   "sem": "VIE",
+   "show": "Tirotallas",
+   "sub": "Stand up comedy · 21:00"
+  },
+  {
+   "dia": "21 NOV",
+   "sem": "SÁB",
+   "show": "Por La Chucha",
+   "sub": "Erwin Padilla & Claudio Merlin · 20:00"
+  },
+  {
+   "dia": "27 NOV",
+   "sem": "VIE",
+   "show": "Docente Indecente",
+   "sub": "Angelo Soul · 19:30 y 22:00"
+  },
+  {
+   "dia": "4 DIC",
+   "sem": "VIE",
+   "show": "Gaby del Río",
+   "sub": "Stand up comedy · 21:00"
+  },
+  {
+   "dia": "12 DIC",
+   "sem": "SÁB",
+   "show": "Se Me Chispoteo",
+   "sub": "Ricardo el Mexicano · 21:00"
+  }
+ ]
+}

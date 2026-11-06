@@ -1,0 +1,63 @@
+<!doctype html><html><head><meta charset="utf-8">
+<style>
+@font-face{font-family:LG;src:url(fonts/LeagueGothic%255Bwdth%255D.ttf)}
+@font-face{font-family:DMI;src:url(fonts/DMSerifDisplay-Italic.ttf)}
+@font-face{font-family:AR;src:url(fonts/Archivo%255Bwdth,wght%255D.ttf)}
+:root{--noche:#0e0b10;--lila:#ce78f0;--crema:#f2eadc}
+*{margin:0;padding:0;box-sizing:border-box}
+body{width:1920px;height:1080px;overflow:hidden;background:var(--noche);font-family:AR;color:var(--crema)}
+#c{position:relative;width:1920px;height:1080px;overflow:hidden;
+ background:
+  radial-gradient(900px 620px at 560px 380px, rgba(206,120,240,.30), transparent 70%),
+  radial-gradient(700px 500px at 1600px 120px, rgba(206,120,240,.10), transparent 70%),
+  linear-gradient(180deg,#140f17 0%,#0e0b10 60%,#09070b 100%)}
+.beam{position:absolute;top:-80px;width:260px;height:1100px;transform-origin:top center;
+ background:linear-gradient(180deg,rgba(242,234,220,.16),rgba(206,120,240,.05) 55%,transparent 85%);filter:blur(18px)}
+.big{position:absolute;left:34px;top:118px;font-family:LG;font-size:400px;line-height:.8;letter-spacing:4px;color:var(--crema);white-space:nowrap}
+.big.ol{color:transparent;-webkit-text-stroke:2px rgba(206,120,240,.55);left:46px;top:130px}
+.kick{position:absolute;left:44px;top:58px;display:flex;align-items:baseline;gap:18px}
+.kick .s{font-family:DMI;font-size:46px;color:var(--lila)}
+.kick .t{font-family:AR;font-weight:700;font-size:19px;letter-spacing:6px}
+.p{position:absolute;bottom:80px;filter:drop-shadow(0 0 2px rgba(14,11,16,.9)) drop-shadow(0 0 26px rgba(206,120,240,.55))}
+.p.front{filter:drop-shadow(0 6px 14px rgba(0,0,0,.75)) drop-shadow(0 0 30px rgba(206,120,240,.5))}
+.tag{position:absolute;font-family:LG;font-size:40px;line-height:1;background:var(--lila);color:var(--noche);padding:4px 12px 2px;letter-spacing:1px}
+.fade{position:absolute;z-index:9;left:0;bottom:92px;width:1250px;height:170px;background:linear-gradient(0deg,rgba(14,11,16,.95),transparent)}
+/* columna derecha */
+.col{position:absolute;z-index:10;left:1290px;top:52px;width:590px}
+.logo{height:58px;display:block;margin-bottom:26px}
+.hd{font-family:AR;font-weight:700;font-size:17px;letter-spacing:7px;color:var(--lila);padding-bottom:12px;border-bottom:1px solid rgba(242,234,220,.25)}
+.row{display:flex;align-items:center;gap:22px;padding:20px 0 19px;border-bottom:1px solid rgba(242,234,220,.12)}
+.d{width:132px;flex:none;text-align:left;white-space:nowrap}
+.d .n{font-family:LG;font-size:50px;line-height:.82;color:var(--lila)}
+.d .w{font-family:AR;font-weight:700;font-size:14px;letter-spacing:4px;opacity:.8;margin-top:4px}
+.i .n{font-family:LG;font-size:50px;line-height:.86;letter-spacing:.5px;text-transform:uppercase}
+.i .a{font-family:AR;font-weight:600;font-size:15px;letter-spacing:3px;opacity:.78;white-space:nowrap;margin-top:5px;text-transform:uppercase}
+.bar{position:absolute;z-index:12;left:0;bottom:0;width:1920px;height:92px;background:var(--crema);color:var(--noche);display:flex;align-items:center;justify-content:space-between;padding:0 46px}
+.bar .l{font-family:LG;font-size:50px;letter-spacing:1px}
+.bar .l b{color:#8a3fb0;font-weight:400}
+.bar .r{font-family:AR;font-weight:700;font-size:18px;letter-spacing:5px}
+.grain{position:absolute;z-index:20;inset:0;pointer-events:none;opacity:.10;mix-blend-mode:overlay}
+</style></head><body><div id="c">
+<div class="beam" style="left:300px;transform:rotate(14deg)"></div>
+<div class="beam" style="left:760px;transform:rotate(-12deg)"></div>
+<div class="kick"><span class="s">en vivo en Kairus</span><span class="t">NOVIEMBRE — DICIEMBRE</span></div>
+<div class="big ol">STAND UP</div>
+<div class="big">STAND UP</div>
+<div id="people" style="position:absolute;left:0;top:0;width:1250px;height:1080px;overflow:hidden;z-index:4"></div>
+<div class="fade"></div>
+<div class="col"><img class="logo" src="logo.png"><div class="hd">PRÓXIMOS SHOWS · 2º PISO</div><div id="list"></div></div>
+<div class="bar"><div class="l">ENTRADAS Y RESERVAS EN <b>KAIRUSBAR.COM</b></div><div class="r">LOS ROBLES 3668 · LAGUNILLAS · @KAIRUS_CL</div></div>
+<canvas class="grain" id="g" width="1920" height="1080"></canvas>
+</div>
+<script>
+const DATA = __DATA__;
+const pp=document.getElementById('people');
+DATA.people.forEach(p=>{const im=document.createElement('img');im.src='prep/'+p.f+'.png';im.className='p'+(p.front?' front':'');
+ im.style.left=p.x+'px';im.style.height=p.h+'px';if(p.b!==undefined)im.style.bottom=p.b+'px';im.style.zIndex=p.z;pp.appendChild(im);
+ if(p.tag){const t=document.createElement('div');t.className='tag';t.textContent=p.tag;t.style.left=p.tx+'px';t.style.top=p.ty+'px';t.style.zIndex=p.z+1;pp.appendChild(t);}});
+const L=document.getElementById('list');
+DATA.events.forEach(e=>{L.insertAdjacentHTML('beforeend',`<div class="row"><div class="d"><div class="n">${e.dia}</div><div class="w">${e.sem}</div></div><div class="i"><div class="n">${e.show}</div><div class="a">${e.sub}</div></div></div>`)});
+const g=document.getElementById('g').getContext('2d'),id=g.createImageData(1920,1080);
+for(let i=0;i<id.data.length;i+=4){const v=Math.random()*255;id.data[i]=id.data[i+1]=id.data[i+2]=v;id.data[i+3]=255}
+g.putImageData(id,0,0);
+</script></body></html>
