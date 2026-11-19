@@ -1,0 +1,9 @@
+pollo_plancha https://static.wixstatic.com/media/9d9acc_3d48189dcd014ee8914fac9771b7dd77~mv2.png
+tallarines https://static.wixstatic.com/media/9d9acc_d5526ae618c1444f9aa33b900549e843~mv2.png
+chaufa https://static.wixstatic.com/media/9d9acc_fa949a058023408696907c9d406446f5~mv2.png
+chaufa_mixto https://static.wixstatic.com/media/9d9acc_496a51d2bcc24fc5ba9487e4493f6038~mv2.png
+chapsui_pollo https://static.wixstatic.com/media/9d9acc_9f68575f469f499ab4d70636dce13e72~mv2.png
+chapsui_carne https://static.wixstatic.com/media/9d9acc_5ec77d9e9c4240b7b20dbce5376f1a22~mv2.png
+bife https://static.wixstatic.com/media/9d9acc_db932a0233314a119862ae241d290c1b~mv2.png
+desayuno_dulce https://static.wixstatic.com/media/9d9acc_c31f48ab854f46c9b099aea71592c955~mv2.png
+churros https://static.wixstatic.com/media/9d9acc_8f9081ddfd56425cb53fbd6e9fd74d0a~mv2.png
