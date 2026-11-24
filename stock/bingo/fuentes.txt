@@ -1,0 +1,6 @@
+tombola_gaiola https://images.unsplash.com/photo-1757689216934-8c7907b44a28?w=2000&q=85&fm=jpg
+bolas_maquina https://images.unsplash.com/photo-1518688248740-7c31f1a945c4?w=2000&q=85&fm=jpg
+carton_items https://images.unsplash.com/photo-1747623481210-1a8e1a6719d7?w=2000&q=85&fm=jpg
+cartones_fichas https://images.unsplash.com/photo-1773425350120-c1ca2bc04c2b?w=2000&q=85&fm=jpg
+bola_azul https://images.unsplash.com/photo-1629723515744-9ece210b6ddd?w=2000&q=85&fm=jpg
+bola_roja https://images.unsplash.com/photo-1620856516969-6b6f1c1e780b?w=2000&q=85&fm=jpg
