@@ -189,15 +189,60 @@ P['cafe_c4_feed_panqueques'] = (1080, 1350, page(1080, 1350, f"""
 LABELS_C4
 <div class=cs style="position:absolute;left:68px;bottom:56px;opacity:.85">kairus café · desde las 17:00</div>"""), CB)
 
+# ================= tanda 2 (mié 2 – dom 6) =================
+PC = KM / 'eventos/plantilla-cartelera'
+FONTS2 = f"@font-face{{font-family:LG;src:url(data:font/ttf;base64,{b64(PC/'fonts/LeagueGothic%5Bwdth%5D.ttf')})}}"
+GABY = 'data:image/png;base64,' + b64(PC / 'cut/gaby.png')
+def show(w, h, top_name, gy, gw):
+    return page(w, h, f"""<style>{FONTS2}</style>
+<div class=abs style="inset:0;background:radial-gradient(60% 45% at 50% {gy+300}px,rgba(255,62,165,.28),rgba(11,10,13,0) 70%),#0B0A0D"></div>
+<img class=logo src="{LOGO}" style="left:64px;top:{60 if h<1500 else 90}px">
+<div class=k style="position:absolute;right:64px;top:{78 if h<1500 else 108}px">kairus presenta</div>
+<div class=abs style="left:0;right:0;top:{top_name}px;text-align:center;font-family:LG;font-size:{250 if h<1500 else 270}px;line-height:.85;color:#F3EBDD;letter-spacing:.01em;white-space:nowrap">GABY DEL RÍO</div>
+<img class=abs src="{GABY}" style="left:{(w-gw)//2}px;top:{gy}px;width:{gw}px">
+<div class=abs style="left:0;right:0;bottom:0;height:{520 if h<1500 else 640}px;background:linear-gradient(rgba(11,10,13,0),#0B0A0D 55%)"></div>
+<div class=abs style="left:64px;right:64px;bottom:{80 if h<1500 else 130}px">
+ <div class=k>stand up · comedia en vivo</div>
+ <div class=t style="font-size:{92 if h<1500 else 104}px;margin:14px 0 26px">viernes 4 de diciembre<br>21:00 hrs.</div>
+ <div style="display:flex;align-items:center;gap:30px"><span class=btn>entradas en kairusbar.cl</span><span class=foot>los robles 3668 · coronel</span></div>
+</div>""")
+P['bar_b5_gaby_feed'] = (1080, 1350, show(1080, 1350, 120, 330, 760))
+P['bar_b5_gaby_historia'] = (1080, 1920, show(1080, 1920, 250, 470, 900))
+
+# café c5 · feed · ciabatta (foto CK recortada al pan, sin pared blanca)
+im = warm(fit(CF / 'ciabatta/ck-4.jpg', 1080, 1350, .5, .68, zoom=1.35), sat=1.12, con=1.12, bri=.84)
+P['cafe_c5_feed_ciabatta'] = (1080, 1350, page(1080, 1350, f"""
+<img class=abs src="{uri_img(im)}" style="inset:0">
+<div class=abs style="inset:0;background:linear-gradient(180deg,rgba(28,18,10,.92) 0,rgba(28,18,10,.5) 25%,rgba(28,18,10,0) 42%,rgba(28,18,10,0) 80%,rgba(28,18,10,.6) 100%)"></div>
+<img class=logo src="{LOGO}" style="right:60px;top:64px;width:170px">
+<div class=abs style="left:68px;top:96px"><div class=ct style="font-size:120px">ciabatta.</div>
+<div class=ci style="font-size:72px;line-height:1.05;margin-top:6px">pan crujiente, bien cargada.</div></div>
+LABELS_C5
+<div class=cs style="position:absolute;left:68px;bottom:56px;opacity:.85">kairus café · desde las 17:00</div>"""))
+
+# café c6 · historia · café y ciabatta (foto arriba, banda abajo)
+im = warm(fit(CF / 'ciabatta/ck-25.jpg', 1080, 1400, .5, .72, zoom=1.15), sat=1.1, con=1.1, bri=.86)
+P['cafe_c6_historia_once'] = (1080, 1920, page(1080, 1920, f"""
+<img class=abs src="{uri_img(im)}" style="left:0;top:0">
+<div class=abs style="left:0;top:0;width:1080px;height:420px;background:linear-gradient(rgba(28,18,10,.9),rgba(28,18,10,0))"></div>
+<div class=abs style="left:0;top:1150px;width:1080px;height:250px;background:linear-gradient(rgba(28,18,10,0),#1C120A)"></div>
+<img class=logo src="{LOGO}" style="left:72px;top:96px;width:160px">
+<div class=abs style="left:72px;top:1430px"><div class=ct style="font-size:112px">café y ciabatta.</div>
+<div class=ci style="font-size:96px;line-height:1">la once de siempre.</div></div>
+<div class=cs style="position:absolute;left:72px;bottom:90px;opacity:.9">todos los días desde las 17:00 · los robles 3668</div>""", bg='#1C120A'))
+
 if __name__ == '__main__':
     import sys, json
     lab = json.loads(sys.argv[1]) if len(sys.argv) > 1 else {}
+    ONLY = sys.argv[2].split(',') if len(sys.argv) > 2 else []
     with sync_playwright() as pw:
         br = pw.chromium.launch(executable_path='/usr/bin/google-chrome', args=['--no-sandbox'])
         for name, v in P.items():
+            if ONLY and name not in ONLY: continue
             w, h, html = v[0], v[1], v[2]
-            html = html.replace('LABELS_C4', lab.get('c4', ''))
+            html = html.replace('LABELS_C4', lab.get('c4', '')).replace('LABELS_C5', lab.get('c5', ''))
             pg = br.new_page(viewport={'width': w, 'height': h}); pg.set_content(html); pg.wait_for_timeout(250)
             pg.screenshot(path=str(OUT / f'{name}.jpg'), type='jpeg', quality=92); pg.close()
             print('ok', name)
         br.close()
+
