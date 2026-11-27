@@ -156,15 +156,15 @@ P['cafe_c1_feed_jamonqueso'] = (1080, 1350, page(1080, 1350, f"""
 <div class=cs style="position:absolute;left:68px;bottom:56px;opacity:.85">kairus café · desde las 17:00</div>"""), CB)
 
 # c2 · historia · la tarde pide café (foto abajo, banda editorial arriba)
-im = warm(fit(CF / 'cafe/sesion-img_0274.jpg', 1080, 1500, .45, .5))
+im = warm(fit(CF / 'cafe/sesion-img_0274.jpg', 1080, 1500, .45, .35, zoom=1.25))
 P['cafe_c2_historia_tarde'] = (1080, 1920, page(1080, 1920, f"""
 <img class=abs src="{uri_img(im)}" style="left:0;top:420px">
 <div class=abs style="left:0;top:420px;width:1080px;height:260px;background:linear-gradient({CB},rgba(28,18,10,0))"></div>
 <img class=logo src="{LOGO}" style="left:72px;top:96px;width:160px">
 <div class=abs style="left:72px;top:210px"><div class=ct style="font-size:112px">la tarde</div>
 <div class=ci style="font-size:124px;line-height:.95">pide café.</div></div>
-{label(432, 740, 700, 660, 'crema')}
-{label(440, 1140, 740, 1060, 'café con leche')}
+{label(500, 880, 760, 800, 'crema')}
+{label(500, 1380, 760, 1300, 'café con leche')}
 <div class=abs style="left:0;bottom:0;width:1080px;height:300px;background:linear-gradient(rgba(28,18,10,0),rgba(28,18,10,.92))"></div>
 <div class=cs style="position:absolute;left:72px;bottom:90px;opacity:.9">todos los días desde las 17:00 · los robles 3668</div>""", bg=CB))
 
